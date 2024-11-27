@@ -16,7 +16,7 @@ const Navbar = ({ authToken, setAuthToken }) => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/session', {
+        const response = await fetch('https://movie-backend-qcl3.onrender.com/api/auth/session', {
           method: 'GET',
           credentials: 'include',
         });
@@ -63,7 +63,7 @@ const Navbar = ({ authToken, setAuthToken }) => {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:5000/api/auth/logout', {
+      await fetch('https://movie-backend-qcl3.onrender.com/api/auth/logout', {
         method: 'POST',
         credentials: 'include',
       });
