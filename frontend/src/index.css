@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css or a global stylesheet */
+
+:root {
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #181818;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --link-color-light: #E50914;
+  --link-color-dark: #E50914;
+  --button-bg-light: #ffffff;
+  --button-bg-dark: #333333;
+}
+
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+a {
+  color: var(--link-color-light);
+}
+
+body.dark a {
+  color: var(--link-color-dark);
+}
+
+button {
+  background-color: var(--button-bg-light);
+}
+
+body.dark button {
+  background-color: var(--button-bg-dark);
+}
+
+.Toastify__toast--success {
+    background-color: #E50914;
+    color: white;
+  }
+  
+  .Toastify__toast--error {
+    background-color: #E50914;
+    border: 3px solid white;
+    color: white;
+  }
+
+.Toastify__progress-bar {
+  background-color: white; /* Set your desired color */
+}
+
+  /* In your toastStyles.css */
+
+  .Toastify__toast--success .Toastify__close-button svg {
+    fill: #ffffff !important; /* Ensures white color applies to the SVG */
+  }
+  
+  .Toastify__toast--error .Toastify__close-button svg {
+    fill: #ffffff !important; /* Ensures white color applies to the SVG */
+  }
+  
+  .Toastify__close-button {
+    background-color: transparent !important; /* Removes background if needed */
+  }
+  
