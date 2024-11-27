@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 // Configure CORS to allow requests from your front-end's domain
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your front-end URL
+  origin: 'https://frontend-fs64.onrender.com', // Replace with your front-end URL
   methods: 'GET,POST,PUT,DELETE',
   credentials: true
 }));
