@@ -14,7 +14,7 @@ const Login = ({ setAuthToken }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://movie-backend-qcl3.onrender.com/api/auth/login",
         {
           email,
           password,
