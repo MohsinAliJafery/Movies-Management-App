@@ -103,7 +103,7 @@ const Navbar = ({ authToken, setAuthToken }) => {
         <div className="flex items-center space-x-6">
           <Link to="/" className="flex items-center text-3xl font-semibold">
             <img src="/video-icon.png" alt="Logo" className="w-10 h-10 mr-2" />
-            MovaFlix
+            <span className='text-3xl'>MovaFlix</span>
           </Link>
           {isLoggedIn && (
             <Link to="/favorites" className="text-xl font-medium hover:text-gray-200">
