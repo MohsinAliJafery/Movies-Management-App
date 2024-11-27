@@ -14,7 +14,7 @@ const Login = ({ setAuthToken }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://movie-backend-qcl3.onrender.com/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         {
           email,
           password,
@@ -94,11 +94,14 @@ const Login = ({ setAuthToken }) => {
           <p className="text-sm text-gray-700">
             Don't have an account?{" "}
             <a
-              href="/register"
-              className="text-[#E50914] font-semibold hover:underline"
-            >
-              Register here
-            </a>
+      onClick={(e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        navigate('/register');
+      }}
+      className="text-[#E50914] font-semibold hover:underline cursor-pointer"
+    >
+      Register here
+    </a>
           </p>
         </div>
       </div>

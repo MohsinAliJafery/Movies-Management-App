@@ -3,6 +3,7 @@ import { FaHeart, FaRegHeart, FaThLarge, FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify'; // Import toast
 import 'react-toastify/dist/ReactToastify.css'; // Import styles for Toastify
+import { useNavigate } from 'react-router-dom';
 
 const Home = ({ movies, favorites, toggleFavorite }) => {
   const [viewMode, setViewMode] = useState('grid');
@@ -11,6 +12,7 @@ const Home = ({ movies, favorites, toggleFavorite }) => {
   const [sortCriteria, setSortCriteria] = useState('');
   const [filterGenre, setFilterGenre] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const moviesPerPage = 10;
 

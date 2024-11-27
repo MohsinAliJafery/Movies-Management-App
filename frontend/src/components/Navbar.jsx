@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaSignInAlt, FaSignOutAlt, FaUserPlus, FaMoon, FaSun } from 'react-icons/fa';
-import { ThemeContext } from '../context/ThemeContext'; // Import the ThemeContext
+import { ThemeContext } from '../context/ThemeContext'; 
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ authToken, setAuthToken }) => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext); // Use context for theme
@@ -10,11 +11,12 @@ const Navbar = ({ authToken, setAuthToken }) => {
   const [user, setUser] = useState({ name: '', avatar: '', userId: '' });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const response = await fetch('https://movie-backend-qcl3.onrender.com/api/auth/session', {
+        const response = await fetch('http://localhost:5000/api/auth/session', {
           method: 'GET',
           credentials: 'include',
         });
@@ -72,7 +74,7 @@ const Navbar = ({ authToken, setAuthToken }) => {
       setAuthToken(null);
       setUser({ name: '', avatar: '', userId: '' });
       setIsLoggedIn(false);
-      window.location.href = '/';
+      navigate('/')
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -121,13 +123,13 @@ const Navbar = ({ authToken, setAuthToken }) => {
           {!isLoggedIn ? (
             <>
               <button
-                onClick={() => (window.location.href = '/login')}
+                onClick={() => navigate('/login')}
                 className="px-6 py-3 bg-white border-2 text-[#E50914] rounded-full hover:bg-[#E50914] hover:text-white transition-all duration-300"
               >
                 <FaSignInAlt className="inline-block mr-2" /> Login
               </button>
               <button
-                onClick={() => (window.location.href = '/register')}
+                onClick={() => navigate('/register')}
                 className="px-6 py-3 bg-white border-2 text-[#E50914] rounded-full hover:bg-[#E50914] hover:text-white transition-all duration-300"
               >
                 <FaUserPlus className="inline-block mr-2" /> Register

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [step, setStep] = useState(1); // Track current step
+  const navigate = useNavigate(); // Initialize the navigate function
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,11 +46,11 @@ const Register = () => {
       for (const key in formData) {
         formDataObj.append(key, formData[key]);
       }
-      await axios.post("https://movie-backend-qcl3.onrender.com/api/auth/register", formDataObj, {
+      await axios.post("http://localhost:5000/api/auth/register", formDataObj, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("User registered successfully. Please login.");
-      window.location.href = "/login";
+      navigate('/login');
     } catch (err) {
       alert(err.response?.data || "Registration failed");
     }
