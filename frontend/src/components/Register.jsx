@@ -44,7 +44,7 @@ const Register = () => {
       for (const key in formData) {
         formDataObj.append(key, formData[key]);
       }
-      await axios.post("http://localhost:5000/api/auth/register", formDataObj, {
+      await axios.post("https://movie-backend-qcl3.onrender.com/api/auth/register", formDataObj, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("User registered successfully. Please login.");
