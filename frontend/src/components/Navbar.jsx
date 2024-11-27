@@ -98,7 +98,7 @@ const Navbar = ({ authToken, setAuthToken }) => {
   }
 
   return (
-    <nav className={`p-6 ${isDarkMode ? 'bg-white text-black' : 'bg-[#E50914] text-white'}`}>
+    <nav className={`p-6 ${isDarkMode ? 'bg-white text-black' : 'bg-[#E50914]'}`}>
       <div className="flex justify-between items-center container mx-auto">
         <div className="flex items-center space-x-6">
           <Link to="/" className="flex items-center text-3xl font-semibold">
