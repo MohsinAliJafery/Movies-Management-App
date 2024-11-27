@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     // Fetch movies
     axios
-      .get('http://localhost:5000/api/movies')
+      .get('https://movie-backend-qcl3.onrender.com/api/movies')
       .then((response) => {
         setMovies(response.data);
       })
@@ -49,7 +49,7 @@ function App() {
 
     const fetchFavorites = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/favorites', {
+        const response = await fetch('https://movie-backend-qcl3.onrender.com/api/favorites', {
           method: 'GET',
           credentials: 'include',
         });
