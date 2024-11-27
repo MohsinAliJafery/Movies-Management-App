@@ -17,7 +17,7 @@ const Favorites = () => {
 
     const fetchFavorites = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/favorites', {
+        const response = await fetch('https://movie-backend-qcl3.onrender.com/api/favorites', {
           method: 'GET',
           credentials: 'include', // Include cookies for authentication
         });
