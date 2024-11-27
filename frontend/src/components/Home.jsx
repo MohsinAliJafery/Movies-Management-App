@@ -74,7 +74,7 @@ const Home = ({ movies, favorites, toggleFavorite }) => {
     }
   
     const isFavorite = favorites.some(fav => String(fav.movieId) === String(movieId));
-    const url = `http://localhost:5000/api/favorites${isFavorite ? '/remove' : '/add'}`;
+    const url = `https://movie-backend-qcl3.onrender.com/api/favorites${isFavorite ? '/remove' : '/add'}`;
   
     try {
       const response = await fetch(url, {
