@@ -1,14 +1,12 @@
-// firebase.js
 require('dotenv').config(); // Load environment variables from .env file
 const admin = require('firebase-admin');
-const path = require('path');
 
-// Get the service account key path from environment variable
-const serviceAccountPath = process.env.FIREBASE_SERVICE_ACCOUNT_KEY_PATH;
+// Parse the service account key from the environment variable
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 
 // Initialize Firebase with credentials from the environment
 admin.initializeApp({
-  credential: admin.credential.cert(require(serviceAccountPath)), // Read the key file from the path
+  credential: admin.credential.cert(serviceAccount), // Use the parsed JSON directly
   storageBucket: process.env.FIREBASE_STORAGE_BUCKET, // Use the storage bucket from the environment variable
 });
 
