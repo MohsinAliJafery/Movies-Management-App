@@ -43,7 +43,7 @@ const Home = ({ movies, favorites, toggleFavorite }) => {
   const getUserId = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch('http://localhost:5000/api/auth/user', {
+      const response = await fetch('https://movie-backend-qcl3.onrender.com/api/auth/user', {
         method: 'GET',
         credentials: 'include',
       });
